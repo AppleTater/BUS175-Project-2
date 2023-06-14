@@ -6,7 +6,6 @@ sales_data = pd.read_csv("sales_data.csv")
 sales_data["Year"] = pd.to_datetime(sales_data["Date"]).dt.year
 sales_data["Month"] = pd.to_datetime(sales_data["Date"]).dt.month.astype(str).str.zfill(2)
 sales_data["Category"] = sales_data["Notes"].str.extract
-
 sales_data = sales_data.dropna()
 
 sales_data["Product"] = sales_data["Product"].str.strip()
